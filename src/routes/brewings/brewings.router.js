@@ -1,9 +1,10 @@
 const express = require('express');
 
-const { getAllBrewings } = require('./brewings.controller')
+const { getAllBrewings, httpAddBrewing } = require('./brewings.controller')
 
 const brewingsRouter = express.Router();
 
 brewingsRouter.get('/brewings', getAllBrewings);
+brewingsRouter.post('/brewings/add-brewing', httpAddBrewing);
 
 module.exports = brewingsRouter;
