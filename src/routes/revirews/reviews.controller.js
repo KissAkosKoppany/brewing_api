@@ -1,4 +1,4 @@
-const { getReviews, addReview } = require('../../models/reviews.model')
+const { getReviews, addReview, deleteReview } = require('../../models/reviews.model')
 
 async function getAllReviews(req, res) {
     const allReviews = await getReviews()
@@ -11,7 +11,14 @@ async function httpAddReview(req, res) {
     return res.status(201).json(newReview)
 }
 
+async function httpDeleteRevirew(req, res) {
+    const id = req.body
+    await deleteReview(id.id)
+    return res.status(201).json(id.id)
+}
+
 module.exports = {
     getAllReviews,
-    httpAddReview
+    httpAddReview,
+    httpDeleteRevirew
 }

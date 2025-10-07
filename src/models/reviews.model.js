@@ -16,7 +16,19 @@ async function addReview(newReview) {
     await client.query(query)
 }
 
+async function deleteReview(id) {
+    const query = {
+        text: 'DELETE FROM reviews WHERE id = $1',
+        values: [id],
+    }
+    
+    await client.query(query)
+}
+
+
+
 module.exports = {
     getReviews,
-    addReview
+    addReview,
+    deleteReview
 };

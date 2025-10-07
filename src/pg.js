@@ -1,6 +1,7 @@
 const { Client } = require('pg')
 
 const client = new Client({
+    //change database info after making db on mini pc
     user: "postgres",
     host: "localhost",
     database: "brewing",

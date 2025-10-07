@@ -9,6 +9,7 @@ const app = express();
 
 app.use(cors({
     origin: 'http://localhost:5173'
+    // change the link to http://neko-kaiju.com
 }));
 app.use(express.json());
 app.use(beersRouter);
