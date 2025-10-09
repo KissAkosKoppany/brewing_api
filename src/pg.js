@@ -1,5 +1,5 @@
 const { Client } = require('pg')
-
+require('dotenv').config();
 // const client = new Client({
 //     //change database info after making db on mini pc
 //     user: "susanou",
@@ -8,8 +8,6 @@ const { Client } = require('pg')
 //     port: "5432",
 //     password: "naruto"
 // })
-
-console.log(process.env.DATABASE_URL)
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
