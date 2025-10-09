@@ -1,13 +1,17 @@
 const { Client } = require('pg')
 
+// const client = new Client({
+//     //change database info after making db on mini pc
+//     user: "susanou",
+//     host: "localhost",
+//     database: "brewing_db",
+//     port: "5432",
+//     password: "naruto"
+// })
+
 const client = new Client({
-    //change database info after making db on mini pc
-    user: "postgres",
-    host: "localhost",
-    database: "brewing",
-    port: "5432",
-    password: "test"
-})
+  connectionString: process.env.DATABASE_URL,
+});
 
 client.connect().then(() => console.log("connected to db")).catch(() => console.log("can't connect to db"))
 
