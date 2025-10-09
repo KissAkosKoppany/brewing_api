@@ -8,7 +8,7 @@ const reviewsRouter = require('./routes/revirews/reviews.router');
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'http://neko-kaiju.com'
     // change the link to http://neko-kaiju.com
 }));
 app.use(express.json());
