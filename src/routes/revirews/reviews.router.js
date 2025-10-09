@@ -4,8 +4,8 @@ const { getAllReviews, httpAddReview, httpDeleteRevirew } = require('./reviews.c
 
 const reviewsRouter = express.Router();
 
-reviewsRouter.get('/reviews', getAllReviews);
-reviewsRouter.post('/reviews/add-review', httpAddReview)
-reviewsRouter.post('/reviews/delete-review', httpDeleteRevirew)
+reviewsRouter.get('/api/reviews', getAllReviews);
+reviewsRouter.post('/api/reviews/add-review', httpAddReview)
+reviewsRouter.post('/api/reviews/delete-review', httpDeleteRevirew)
 
 module.exports = reviewsRouter;

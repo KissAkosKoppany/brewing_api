@@ -4,8 +4,8 @@ const { getAllBeers, httpAddBeer, httpModifyStock } = require('./beers.controlle
 
 const beersRouter = express.Router();
 
-beersRouter.get('/beers', getAllBeers);
-beersRouter.post('/beers/add-beer', httpAddBeer)
-beersRouter.post('/beers/modify-stock', httpModifyStock)
+beersRouter.get('/api/beers', getAllBeers);
+beersRouter.post('/api/beers/add-beer', httpAddBeer)
+beersRouter.post('/api/beers/modify-stock', httpModifyStock)
 
 module.exports = beersRouter;

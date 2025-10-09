@@ -4,7 +4,7 @@ const { getAllBrewings, httpAddBrewing } = require('./brewings.controller')
 
 const brewingsRouter = express.Router();
 
-brewingsRouter.get('/brewings', getAllBrewings);
-brewingsRouter.post('/brewings/add-brewing', httpAddBrewing);
+brewingsRouter.get('/api/brewings', getAllBrewings);
+brewingsRouter.post('/api/brewings/add-brewing', httpAddBrewing);
 
 module.exports = brewingsRouter;
