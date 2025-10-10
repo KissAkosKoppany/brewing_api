@@ -2,11 +2,11 @@ const { Client } = require('pg')
 require('dotenv').config();
 // const client = new Client({
 //     //change database info after making db on mini pc
-//     user: "susanou",
+//     user: "postgres",
 //     host: "localhost",
-//     database: "brewing_db",
+//     database: "brewing",
 //     port: "5432",
-//     password: "naruto"
+//     password: "test"
 // })
 
 const client = new Client({
