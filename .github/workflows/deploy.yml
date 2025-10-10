@@ -12,6 +12,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Debug secrets (do not log secrets)
+        run: |
+          if [ -z "${{ secrets.SERVER_SSH_KEY }}" ]; then
+            echo "❌ SERVER_SSH_KEY is missing"
+            exit 1
+          else
+            echo "✅ SERVER_SSH_KEY is set"
+          fi
+
       - name: Deploy to Mini PC via SSH
         uses: appleboy/ssh-action@v1.1.0
         with:
