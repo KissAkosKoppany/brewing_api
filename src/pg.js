@@ -1,19 +1,17 @@
 const { Client } = require('pg')
-require('dotenv').config();
-// const client = new Client({
-//     //change database info after making db on mini pc
-//     user: "postgres",
-//     host: "localhost",
-//     database: "brewing",
-//     port: "5432",
-//     password: "test"
-// })
+const dotenv = require('dotenv');
+
+const env = process.env.NODE_ENV || "development";
+
+dotenv.config({
+  path: `.env.${env}`
+});
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
 });
 
-client.connect().then(() => console.log("connected to db")).catch(() => console.log("can't connect to db"))
+client.connect().then(() => console.log("connected to db")).catch(() => console.log("can't connect to db", process.env.DATABASE_URL));
 
 module.exports = {
     client
